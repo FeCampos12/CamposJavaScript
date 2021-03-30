@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var nota=prompt("Falcudade","informe a sua nota");
+        if (nota>100){
+            resposta="Nota invalida";
+        }else if (nota == 100){
+            resposta="Aprovado com nota maxima";
+        }else if (nota> 94){
+            resposta="Aprovado com lovor";
+        }else if (nota>= 60){
+            resposta="Aprovado";
+        }else if(nota>=40){
+            resposta="Recuperação"
+        }else{
+            if(nota>0){
+                resposta="Nota Invalida"
+            }
+            resposta="Reprovado"
+        }
+
+        document.write(resposta);~
+        alert(resposta);
+        resposta+="Ate mais";
+        alert(resposta);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var paises = new Array();
+        var corPais = new Array();
+        paises=["Angola","Brasil","Portugal","Mozambbique"];
+        var numeros=[1,2,3,4,5,6,7,8,9];
+        numeros.sort();//ordena o arrei de forma crescent
+        numeros.reverse();//reverte a ordem dos elementos do arrey
+
+        var cores=[];
+        cores.push("Azul");//Inserir valor no final do vetor
+        cores.push("Preto");
+        cores.push("branco");
+        cores.unshift("Castanho")//insere o elemento no inicio
+        cores.pop();//Elimina o ultimo elemento do arrey
+        cores.shift();//elimina o 1º elemento
+        cores.splice(0,2);//elimina elmentos do indice 0, eliminando 2 elementos em diante
+
+        cores.indexOf("Azul");//função que verifica se este elemento  "azul" esta no arrey e retorna a posição retorna -1 se o elemento não estiver
+        
+        num=numeros.join();//introduz os elementos do arrei numa variavem
+
+        corPais=cores.concat(paises);//colocar os dados do arrey cores e paises em corpais
+
+        corPais.length;//retorna a quantidade de elementos do arrei
+
+
+
+
+        document.write(cores[0]);
+        cores[3]="Verde";
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
