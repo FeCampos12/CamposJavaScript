@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JavaScript</p>
+    <p>PHP</p>
+
+    <script>
+        var tagsp= document.getElementsByTagName("p");//torna-se um vetor podemos usar os metodos de vetor como length
+        //var tagp= getElementsByTagName("p")[2]; PEGAR SOMENTO O 3 ELEMENTO
+        //document.getElementsByTagName("*");captura  todos elementos da pagina
+        document.write(tagsp[2].innerHTML);
+        tagsp[2].style.color="#f00";
+    </script>
+</body>
+</html>
