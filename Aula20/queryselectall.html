@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ps=document.querySelectorAll("h1");//Seleciona todos elementos h1
+        document.write(ps[0].innerHTML);//vai escrever o conteudo do primeiro h1
+        var elementos=document.querySelectorAll(".classe");//camtura todos elementos que usam a classe classe
+        //var elementos=document.querySelectorAll("p.classe"); captura os p que usam a classe classe
+        var elementos=document.querySelectorAll("div > p");//captura os p que estiverem numa div
+        var elementos=document.querySelectorAll("div > *");//todos elementos dentro de uma div
+        var elementos=document.querySelectorAll("div.classe > p");
+        var elementos=document.querySelectorAll("p,h1");//selecionar mais de um elemento
+    </script> 
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        width:200px;
+        height: 200px;
+        border: 1px solid black;;
+        position: absolute;
+        top:0px;
+        left:0px;
+    }
+</style>
+<script>
+    var px=0;
+    var py=0;
+    var ligado=false;
+    /*document.addEventListener("keydown",function(event){
+        var obj= document.getElementById("div1");
+        var tecla=event.keyCode;//codigo da tecla precionada
+        //37-seta para esquerda 38 tecla para cima 39 direita 40 baixo
+        if(tecla==37){
+            px-=10;
+            obj.style.left=px+"px";
+
+        }else if(tecla==38){
+            py-=10;
+            obj.style.top=py+"px";
+        }else if(tecla==39){
+            px+=10;
+            obj.style.left=px+"px";
+        }else if(tecla==40){
+            py+=10;
+            obj.style.top=py+"px";
+        }else if(tecla==13){
+           alert("Evento removido");
+           document.removeEventListener("keydown",move);
+        }
+
+    });*/
+    
+    function move (){
+        var obj= document.getElementById("div1");
+        var tecla=event.keyCode;//codigo da tecla precionada
+        //37-seta para esquerda 38 tecla para cima 39 direita 40 baixo
+        if(tecla==37){
+            px-=10;
+            obj.style.left=px+"px";
+
+        }else if(tecla==38){
+            py-=10;
+            obj.style.top=py+"px";
+        }else if(tecla==39){
+            px+=10;
+            obj.style.left=px+"px";
+        }else if(tecla==40){
+            py+=10;
+            obj.style.top=py+"px";
+        }else if(tecla==13 && ligado==true){
+            ligado=false;
+            alert("Evento removido");
+            obj.style.backgroundColor="#fff";
+            document.removeEventListener("keydown",move);
+        }
+    }
+    function adicionar(){
+        if(ligado==false){
+            alert("Evento adicionado");
+            ligado=true;
+            var obj= document.getElementById("div1");
+            obj.style.backgroundColor="#f00";
+
+            document.addEventListener("keydown",move);
+        }  
+    }
+    document.addEventListener("click",adicionar);
+    
+
+</script>
+<body>
+    <div id="div1"></div> 
+</body>
+</html>

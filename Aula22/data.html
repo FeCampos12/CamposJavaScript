@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=< >, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dt = new Date();
+        dias = dt.getDay();
+        dia = dt.getDate();
+        mes = dt.getMonth();
+        document.write(dt+" "+dias+" "+dia+" "+mes);
+
+        hora = dt.getHours();
+
+        var ndt = new Date();
+        ndia = ndt.setDate(dt.getHours()+2);//alterar o valor com o metodo set
+        document.write(ndia);
+
+        var dia2 = new Date(1992,2,7,10,10,10,10);//ano mes dia hora minutos segundos milisegundos
+    </script>
+</body>
+</html>

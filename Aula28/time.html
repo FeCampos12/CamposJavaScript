@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            border:1px solid black;
+        }
+        
+    </style>
+    <script>
+        var temp;
+        function mudacor(){
+            var obj = document.getElementById("div1");
+            var ob2 = document.getElementById("p1");
+            var ob3 = document.getElementById("p2");
+            var ob4 = document.getElementById("p3");
+            var r=Math.floor(Math.random()*255);
+            var g=Math.floor(Math.random()*255);
+            var b=Math.floor(Math.random()*255);
+            obj.style.backgroundColor="rgb("+r+","+g+","+b+")"; 
+            ob2.innerHTML=r+"-";
+            ob3.innerHTML=g+"-";
+            ob4.innerHTML=b;
+                
+        }
+        //setTimeout(mudacor,3000);//ira chamar a funçao apos 3 segundos
+        //window.addEventListener("load",mudacor);
+       
+
+        function iniciar(){
+            temp = setInterval(mudacor,1000);
+        }
+
+        function parar(){
+            clearInterval(temp);
+        }
+
+        
+        function addeventos(){
+            document.getElementById("bt1").addEventListener("click",iniciar);
+            document.getElementById("bt2").addEventListener("click",parar);
+        }
+        window.addEventListener("load",addeventos);
+        
+    </script>
+
+    
+</head>
+<body>
+    <div id="div1"></div>
+    <br>
+    <span id="p1">Vermelho-</span>
+    <span id="p2">Verde-</span>
+    <span id="p3">Azul</span>
+    <br>
+    <br>
+    <button id="bt1">iniciar</button>
+    <button id="bt2">parar</button>
+</body>
+</html>
