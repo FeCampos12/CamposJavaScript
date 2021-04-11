@@ -21,12 +21,112 @@
             text-align: center;
             margin: 5px;
         }
+        .dvdisplay{
+            display: block;
+        }
+        p{
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            background-color: green;
+            color: honeydew;
+            font-size: 30px;
+            text-align: center;
+        }
         
        
     </style>
 
     <script>
+        var boblioteca=["Html","CSS","Javascript","Pai","Mae","carro"];
+        var qtde=boblioteca.length-1;
+        var pos=Math.round(Math.random()*qtde);
+        var palavra=boblioteca[pos];
+        var tam=palavra.length;
+        var cxLetras=[];
+        var acertos;
+        var erroMax=7;
+        var erros=0;
+        var acertou=false;
+        var jogando=false;
 
+        function defineletra(l){
+            var obj;
+            for(var i=0;i<20;i++){
+                obj=document.getElementById("letra"+i).value="";
+                obj=document.getElementById("letra"+1).style.display="none";
+            }
+            for(var i=0;i<l;i++){
+                obj=document.getElementById("letra"+i).style.display="inline-block";
+            }
+        }
+
+        function jogar(){
+            jog=document.getElementById("letraj");
+            jog.focus();
+            if(jog.value==""){
+                alert("digite uma letra");
+            }else{
+                if(jogando){
+                    var jog;
+                    var obj;
+                    var letraTmp;
+                    var letra;
+                    var pesq;
+                    letra=jog.value;
+                    jog.value="";
+                    pesq=palavra.match(letra);
+                    acertou=false;
+                    while(pesq!=null){
+                        letraTmp=palavra.search(letra);
+                        obj=document.getElementById("letra"+letraTmp).value=letra;
+                        palavra=palavra.replace(letra,'0');
+                        acertos++;
+                        pesq=palavra.match(letra);
+                        acertou=true;
+                    }
+                    if(!acertou){
+                        document.getElementById("dvletrasdigitadas").innerHTML+=letra.toUpperCase();
+                        erros++;
+                        if(erros<7){
+
+                        }else{
+                            document.getElementById("dvmsg").innerHTML="PERDEU";
+                            jogando=false;
+                        }
+                    }
+                    if(acertos==tam){
+                        document.getElementById("dvmsg").innerHTML="";
+                        document.getElementById("dvmsg").innerHTML="GANHOU";
+                        jogando=false;
+                    }
+
+                }
+            }
+
+        }
+
+        function inicia(){
+            jogando=true;
+            jog=document.getElementById("letraj");
+            jog.value="";
+            jog.focus();
+            acertos=0;
+            erros=0;
+            acertou=false;
+            document.getElementById("dvletrasdigitadas").innerHTML="Letras Digitadas";
+            pos=Math.round(Math.random()*qtde);
+            palavra=boblioteca[pos];
+            tam=palavra.length;
+            defineletra(tam);
+            document.getElementById("dvmsg").innerHTML="";
+
+        }
+        function dica(){
+            alert(palavra);
+            jog.focus();
+        }
+        window.addEventListener("load",inicia);
     </script>
 </head>
 <body>
