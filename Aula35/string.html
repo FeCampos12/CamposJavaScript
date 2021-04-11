@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <p id="txt">Estou estudando JavaScript</p>
+    <script>
+        var texto=document.getElementById("txt").innerHTML;
+        var txt2="ola pesoal";
+
+        var res=texto.match("estudando");//verifica se a palavra esta nesta string se tiver retorna a palavra se não retorna null
+        document.write(res.length);//verifica quantas vezes aparece a palavra estudando
+        res=texto.match(/estudando/g);//este mofificadorvai verificar todas as palavra estudar na string
+        res=texto.match(/estudando/i);//ignora casesensit
+        //podemos usar as duas
+        //ao procurar ele vai adicionado osencontrados em forma de arrey, sen nao quisermos usamos a formatacao "m" 
+        res=texto.match([oa]/ig);//pesquisar todos o e a
+        res=texto.match([^oa]/ig);//procura todos os caracteres sem o o e o a
+        res=texto.match([a-g]/ig);//todas entre a e g
+        //usando a barra vertical separando as letras e o mesmo que separalos por espaco
+        res=texto.search(/curso/i)//retorna a posicao onde comeca a palavra
+        res=texto.repeat(/curso/i,"aula");//substitui curso por aula
+        res=texto.repeat(/curso/ig,"aula")//todoscursod
+        res=texto.charAt(2);//retorna o elemento nesta posicao
+        res=texto.charCodeAt(4);//retorna o codigo relacionado com o carater nesta posiçao
+        String.fromCharCode(67);//retorna ocaracter deste codigo
+        texto.concat(txt2+"oi");//adiciona uma string noutra string
+        res=texto.indexOf("j");//indica a posicao de j
+        //se o resultado for menor que 0 e porque nao encontrou, retorna oprimeiro encontrado
+        res=texto.lastIndexOf("c");//retorna a posicao do ultimo c
+         var res=texto.localeCompare(text);
+         //se o resultado for 0 e porque sao iguais e diferente de 0 sao diferente
+
+         res=texto.slice(3,10);//retorna oelemento da posiçao entre 3 e 10
+         res=texto.split(" ");//redefine o arreidefine que agora o que vai determinar a separaç]ao dos elementos do arrei e o espaco 
+         res=texto.substr(2,5);//retorna o elemento que tiver na posicao 2 e cagregamais 5 casar
+         res=texto.toLowerCase();//converte em maiuscolos
+         res=texto.toUpperCase();//maiuscolos
+         res=texto.toLowerCase().substr(3,7);
+
+         res=texto.toString();//converte em string
+         res=texto.toString(2);//converte em binario
+         res=texto.toString(8);//octal
+         res=texto.toString(16);
+
+         res=texto.trim();//cora os espacos no inicio e no final
+        nome="Fernando da \"Silva\" Campos";//usar caracteres especiais na string
+
+
+    </script>
+</body>
+</html>

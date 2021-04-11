@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #carro{
+            width: 200px;
+            height: 370px;
+        }
+        .c1{
+            width: 50px;
+            height: 10px;
+            background-color: brown;
+        }
+        .c2{
+            width: 50px;
+            height: 10px;
+            background-color:violet;
+        }
+        .c3{
+            width: 50px;
+            height: 10px;
+            background-color: rgb(63, 165, 42);
+        }
+    </style>
+
+    <script>
+        function trocaCarro(c){
+            var obj=document.getElementById("carro");
+            if(c==1){
+                obj.setAttribute("class","c1");
+            }else if(c==2){
+                obj.setAttribute("class","c2");
+            }else if(c==3){
+                obj.setAttribute("class","c3");
+            }
+        }
+        function removeCarro(){
+            var obj=document.getElementById("carro");
+            obj.removeAttribute("class");
+        }
+        function verifica(){
+            var obj=document.getElementById("carro");
+            var ver=obj.hasAttribute("class");
+            if(ver){
+                alert("tem cor");
+            }else{
+                alert("Nao tem cor");
+            }
+        }
+       
+    </script>
+</head>
+<body>
+    <button onclick="trocaCarro(1)">Cor 1</button>
+    <button onclick="trocaCarro(2)">Cor 2</button>
+    <button onclick="trocaCarro(3)">Cor 3</button>
+    <button onclick="removeCarro()">Remove Car</button>
+    <button onclick="verifica()">Verifica</button>
+    <div id="carro"></div>
+
+    <script>
+        //document.getElementById("carro").setAttribute("class","c1");
+    </script>
+
+</body>
+</html>
